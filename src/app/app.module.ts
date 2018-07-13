@@ -1,6 +1,8 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import { ContentfulService } from './contentful.service';
+import { MarkdownModule } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -19,8 +21,9 @@ import {TransferHttpCacheModule} from '@nguniversal/common';
       { path: 'lazy/nested', loadChildren: './lazy/lazy.module#LazyModule'}
     ]),
     TransferHttpCacheModule,
+    MarkdownModule.forRoot(),
   ],
-  providers: [],
+  providers: [ContentfulService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

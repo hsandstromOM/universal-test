@@ -1,0 +1,105 @@
+
+<section class="row p-0 m-0" style="height:70vh; margin-top:6rem!important;">
+  <section class="masthead col-sm"  *ngFor="let section2 of home?.fields.section2">
+    <img class="img-fluid background-image" data-src="{{section2?.fields.icon.fields.file.url}}" alt="{{section2?.fields.icon.fields.title}}" />
+      <div class="container" style="height:100%;">
+    <div class="row justify-content-center" style="height:100%;">
+      <div class="text-center col-lg-6" style="height:100%; top:25%;">
+        <h2 class="section-heading">{{ section2?.fields.heading }}</h2>
+        <hr class="detail-hr">
+        <div class="text-faded section-subheading" markdown [data]="section2?.fields.body"></div>
+        <a class="rounded-button-none" routerLink="{{ section2?.fields.ctaButton1Link }}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ section2?.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+<section class="bg-primary">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center" *ngFor="let section1 of home?.fields.section1">
+        <h2 class="section-heading">{{ section1?.fields.heading }}</h2>
+        <div class="text-faded mb-4 section-subheading" markdown [data]="section1?.fields.body"></div>
+        <a class="btn rounded-button" routerLink="/team" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ section1?.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- <section class="bg-primary masthead">
+      <img class="img-fluid background-image" data-src="{{home?.fields.section4.fields.icon.fields.file.url}}" alt="{{home?.fields.section4.fields.icon.fields.title}}" />
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <h2 class="section-heading">{{ home?.fields.section4.fields.heading }}</h2>
+        <div class="text-faded mb-4 section-subheading" markdown [data]="home?.fields.section4.fields.body"></div>
+        <a class="btn rounded-button" routerLink="{{ home?.fields.section4.fields.ctaButton1Link }}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ home?.fields.section4.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+<section class="row p-0 m-0">
+  <section class="masthead">
+    <img class="img-fluid background-image" data-src="{{home?.fields.section4.fields.icon.fields.file.url}}" alt="{{home?.fields.section4.fields.icon.fields.title}}" />
+      <div class="container">
+    <div class="row justify-content-center">
+      <div class="text-center col-md-6">
+        <h2 class="section-heading">{{ home?.fields.section4.fields.heading }}</h2>
+        <hr class="detail-hr">
+        <div class="text-faded section-subheading" markdown [data]="home?.fields.section4.fields.body"></div>
+        <a class="btn rounded-button" routerLink="{{ home?.fields.section4.fields.ctaButton1Link }}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{home?.fields.section4.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+</section>
+
+<section class="bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center" *ngFor="let section3 of home?.fields.section3">
+        <h2 class="section-heading">{{ section3?.fields.heading }}</h2>
+        <div class="text-faded mb-4 section-subheading" markdown [data]="section3?.fields.body"></div>
+        <a class="btn rounded-button" href="{{ section3?.fields.ctaButton1Link }}" target="_blank" rel="nofollow noreferrer">{{ section3?.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="p-0" id="portfolio">
+  <div class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-lg-4 col-sm-6" *ngFor="let blogPost of home?.fields.featureSection">
+        <a class="portfolio-box" [routerLink]="['/listings', blogPost?.fields.slug]">
+             <img class="img-fluid" src="{{ blogPost?.fields.image.fields.file.url }}" alt="{{ blogPost?.fields.image.fields.title }}">
+             <div class="portfolio-box-caption">
+               <div class="portfolio-box-caption-content">
+                 <div class="project-category">
+                   <p class="mb-2 text-uppercase">{{ blogPost?.fields.area }}</p>
+                    <h3 class="mb-2 text-uppercase">{{ blogPost?.fields.title }}</h3>
+                        <a class="mb-0" [routerLink]="['/blog', blogPost?.fields.slug]"><p class="yellow mb-0">Read More <p></a>
+                 </div>
+               </div>
+             </div>
+           </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section class="bg-primary">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 mx-auto text-center">
+        <h2 class="section-heading">{{ home?.fields.section4.fields.heading }}</h2>
+        <div class="text-faded mb-4 section-subheading" markdown [data]="home?.fields.section4.fields.body"></div>
+        <a class="btn rounded-button" routerLink="{{ home?.fields.section4.fields.ctaButton1Link }}" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">{{ home?.fields.section4.fields.ctaButton1Label }}</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+  <!-- <ngx-json-ld [json]="schema"></ngx-json-ld> -->
